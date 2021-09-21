@@ -50,7 +50,7 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
             }
 
             userStream.current = stream;
-            socket.current = io('http://localhost:4000');
+            socket.current = io('https://blooming-spire-11571.herokuapp.com/');
 
             socket.current.on('user-id', (userId: string) => {
                 setUserId(userId); 

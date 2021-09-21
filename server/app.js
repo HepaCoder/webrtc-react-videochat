@@ -1,14 +1,23 @@
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
-const PORT = 4000;
+
+const PORT = process.env.PORT || 4000;
 const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello');
+});
+
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         origin: '*',
     }
 });
+
+
+
 let users = new Map();
 io.on('connection', socket => {
     let userId = String(Math.floor(1000 + Math.random() * 9000));
@@ -27,6 +36,7 @@ io.on('connection', socket => {
         io.to(users.get(payload.targetId)).emit('hang-up', payload);
     });
 });
+
 server.listen(PORT, () => {
     console.log('Server started at port => ', PORT);
 });

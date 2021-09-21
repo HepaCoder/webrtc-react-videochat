@@ -20,12 +20,7 @@ interface HangUp {
 
 const PORT = 4000;
 const app = express();
-const server = http.createServer(app);
-const io = new Server(server, {
-    cors: {
-        origin: '*', 
-    }
-});
+
 
 let users = new Map<string, string>();
 
@@ -54,6 +49,12 @@ io.on('connection', socket => {
 
 });
 
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: '*', 
+    }
+});
 server.listen(PORT, () => {
     console.log('Server started at port => ', PORT);
 });
