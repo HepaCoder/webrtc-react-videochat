@@ -18,7 +18,7 @@ interface HangUp {
     callerId: string,
 }
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
