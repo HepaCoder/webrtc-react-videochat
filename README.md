@@ -8,7 +8,7 @@ A simple video chat application (one to one) created using WebRtc.
 
 Clone the project
 
-`git clone https://github.com/HepaCoder/webrtc-react-videochat.git`
+`git clone https://github.com/os30722/webrtc-react-videochat.git`
 
 ## To start the server
 
