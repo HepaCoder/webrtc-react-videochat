@@ -50,7 +50,7 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
             }
 
             userStream.current = stream;
-            socket.current = io('https://blooming-spire-11571.herokuapp.com/');
+            socket.current = io('http://localhost:4000');
 
             socket.current.on('user-id', (userId: string) => {
                 setUserId(userId); 
@@ -190,8 +190,8 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
 
     return (
         <div className='video_screen'>
-           <video autoPlay height={400} width={400} ref={userVideo} />
-           <video autoPlay height={400} width={400} ref={peerVideo}/>
+           <video autoPlay height={500} width={500} ref={userVideo} />
+           <video autoPlay height={500} width={500} ref={peerVideo}/>
         </div>
     )
 }

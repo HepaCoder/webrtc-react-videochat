@@ -21,6 +21,12 @@ body {
   justify-content:space-evenly;
 }
 
+@media only screen and (max-width: 900px) {
+  .video_screen{
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .peer_id_input_wrapper {
   margin-top: 40px;
