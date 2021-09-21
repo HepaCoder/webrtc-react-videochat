@@ -50,7 +50,7 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
             }
 
             userStream.current = stream;
-            socket.current = io('http://localhost:4000');
+            socket.current = io('https://hidden-island-58396.herokuapp.com/');
 
             socket.current.on('user-id', (userId: string) => {
                 setUserId(userId); 
