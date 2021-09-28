@@ -45,8 +45,6 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
             if(userVideo.current != null ){
                 userVideo.current.srcObject = stream;
 
-                // To prevent echoing of our own voice.
-                userVideo.current.muted = true;
             }
 
             userStream.current = stream;
