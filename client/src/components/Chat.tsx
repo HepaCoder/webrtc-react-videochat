@@ -45,6 +45,9 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
             if(userVideo.current != null ){
                 userVideo.current.srcObject = stream;
 
+                // To prevent echoing of our own voice.
+                userVideo.current.muted = true;
+                
             }
 
             userStream.current = stream;
@@ -189,8 +192,8 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
 
     return (
         <div className='video_screen'>
-           <video autoPlay={true}  height={500} width={500} ref={userVideo} />
-           <video autoPlay={true}  height={500} width={500} ref={peerVideo}/>
+           <video autoPlay height={500} width={500} ref={userVideo} />
+           <video autoPlay height={500} width={500} ref={peerVideo}/>
         </div>
     )
 }
