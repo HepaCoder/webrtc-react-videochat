@@ -191,8 +191,8 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
 
     return (
         <div className='video_screen'>
-           <video autoPlay height={500} width={500} ref={userVideo} />
-           <video autoPlay height={500} width={500} ref={peerVideo}/>
+           <video autoPlay={true} muted={true} playsInline={true} height={500} width={500} ref={userVideo} />
+           <video autoPlay={true} muted={true} playsInline={true}  height={500} width={500} ref={peerVideo}/>
         </div>
     )
 }
