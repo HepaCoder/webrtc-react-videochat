@@ -92,6 +92,7 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
             });
         
             socket.current.on('new-ice', (ice: Ice) => {
+                console.log('Got ice', ice)
                 let candidate = new RTCIceCandidate(ice.candidate);
                 peerConnection.current?.addIceCandidate(candidate);
             });
