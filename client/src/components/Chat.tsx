@@ -139,7 +139,7 @@ const Chat: React.FC<Props> = ({userId, setUserId, peerId, setPeerId}) => {
     }
 
     function handleICECandidateEvent(event: RTCPeerConnectionIceEvent) {
-        console.log('Emit ice', ice)
+        console.log('Emit ice', event.candidate)
 
         if (event.candidate) {
             socket.current.emit('new-ice', {
