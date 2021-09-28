@@ -16,7 +16,7 @@ function App() {
       <div className='user_info'>Your user id is {userId}</div>
       <Chat setUserId={setUserId} peerId={peerId} userId={userId} setPeerId={setPeerIdWrapper} />
       <div className='peer_id_input_wrapper' >
-        <input type='text' placeholder='Enr Peer Id' className='peer_id_input' 
+        <input type='text' placeholder='Enter Peer Id' className='peer_id_input' 
           value={inputPeer} onChange={(e) => setInputPeer(e.target.value)} hidden={peerId != null} />
         <button type='button' className='connect_button' onClick={() => peerId == null &&
            inputPeer !== ''? setPeerId(inputPeer) : setPeerId(null)} >
